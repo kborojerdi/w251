@@ -42,5 +42,10 @@ I re-used the Dockerfile from the previous broker. Also the Processor/Saver imag
 Again to make networking and other settings easier, I used a docker-compose.yml file.
 
 
+[link to sample face](https://s3.us-south.cloud-object-storage.appdomain.cloud/cloud-object-storage-w251-hw3-faces/myface.png)
+
+
+Submission
+Please point us to the repository of your code and provide an http link to the location of your faces in the object storage. Also, explan the naming of the MQTT topics and the QoS that you used.
 
 
