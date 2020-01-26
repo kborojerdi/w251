@@ -1,0 +1,22 @@
+FROM ubuntu:bionic
+
+# build this: e.g docker build -t motion -f Dockerfile.opencv-mqtt
+# to run this container, do:
+# on the host:
+# make sure you're in the X environment
+# xhost + 
+# docker run --rm --privileged -e DISPLAY -v /tmp:/tmp -ti motion bash
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    libopencv-dev \
+    mosquitto \
+    mosquitto-clients \
+    python-opencv \
+    python-pip
+
+RUN pip install paho-mqtt
+
+WORKDIR /
+COPY mqtt_sub_save.py .
