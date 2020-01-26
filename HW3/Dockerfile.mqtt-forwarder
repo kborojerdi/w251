@@ -1,0 +1,18 @@
+FROM python:3.7-alpine
+
+RUN apk update && apk upgrade
+RUN apk add mosquitto mosquitto-clients
+RUN pip install paho-mqtt
+
+WORKDIR /
+COPY mqtt.py .
+
+# Expose MQTT port
+EXPOSE 1883
+
+# CMD ["mosquitto"]
+# CMD /usr/sbin/moquitto -c /conf/mosquitto.conf
+# ENTRYPOINT ["/usr/sbin/mosquitto"]
+
+
+
