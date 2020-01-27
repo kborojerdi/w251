@@ -4,7 +4,7 @@ For this homework I have split up the ta
 
 In the cloud, you need to provision a lightweight virtual machine (1-2 CPUs and 2-4 G of RAM should suffice) and run an MQTT broker. As discussed above, the faces will need to be sent here as binary messages. Another component will need to be created here to receive these binary files and save them to SoftLayer's Object storage (note that the Swift-compatible object storage is being deprecated in favor of s3-compatible object storage).
 
-# Cloud VM
+# Part 1: Cloud VM
 
 ## Provision VM
 I setup up a lightweight VM from my jumpbox using the CLI 
@@ -37,25 +37,57 @@ apt-get install -y docker-ce
 ```
 verify ```docker run hello-world```
 
+Next to install Docker Compose I ran the following
 
-### Set IBM Object Storage
-Create Object Storage through IBM Cloud service
+```sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
 
+## Setup IBM Object Storage
+
+I created the Object Storage through IBM Cloud service website. https://cloud.ibm.com
+I did this by going to resource list menu and clicking on the "create resource" blue button on the top right. 
+Next, by clicking the storage menu I selected "Object Storage" and select the default "Lite Plan".
+
+Next I mounted the cloud object VSI using the following
+```
+#Biuld and install package
+sudo apt-get update
+sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 Add storage
 
-name      value
-ID        95633556
-FQDN      faces.storage.cloud
-created   2020-01-20T13:55:57Z
-guid      fdf0fb88-788a-4f2e-93e4-3086443a71acfollowing
-IP Addr   169.62.93.58
+#Build and install library
+cd s3fs-fuse
+./autogen.sh
+./configure
+make
+sudo make install
+```
+Next I went to my object storage and from the service credentials viewed my credentials:
 
-### Starting the MQTT Broker and Image Processor/Saver on the Cloud VSI
+{
+  "apikey": "CXTYf2wsfzVXUW1bLnJhSxWn3ko-YczE0MYFqABkN_Fx",
+  "cos_hmac_keys": {
+    "access_key_id": "b8714174da0e4d6688d7c9534cd06d98",
+    "secret_access_key": "7d0354fa191c04c2df7ce86768f72ad35a36f37cc019bc52"
+  },
+
+
+```
+echo "<b8714174da0e4d6688d7c9534cd06d98>:<7d0354fa191c04c2df7ce86768f72ad35a36f37cc019bc52>" > $HOME/.cos_creds
+chmod 600 $HOME/.cos_creds
+```
+Finally I created a directory to mount my bucket using the following
+
+```
+sudo mkdir -m 777 /mnt/mybucket
+sudo s3fs bucketname /mnt/mybucket -o passwd_file=$HOME/.cos_creds -o sigv2 -o use_path_request_style -o url=https://s3.us-east.objectstorage.softlayer.net
+```
+
+## Starting the MQTT Broker and Image Processor/Saver on the Cloud VSI
 I started with the Mosquitto Broker running on Alipne Linux. I created a Dockerfile.alpine-mqtt and built the docker image with the following command.
 ```
 docker build -t mosquitto -f Dockerfile.alpine-mqtt
 ```
-
 In order to get the incoming images from the MQTT broker and and save them to the Object Storage. I used a python file to subscribe to the broker and convert the mesages back to an image from bytes and save it to the object storage. I created a Dockerfile based on Ubuntu and added the neccesary apps and build the docker image.
 ```
 docker build -t client -f Dockerfile.opencv-mqtt
