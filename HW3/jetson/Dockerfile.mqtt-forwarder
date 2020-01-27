@@ -1,4 +1,7 @@
 FROM python:3.7-alpine
+LABEL Maintainer="Katayoun Borojerdi <kborojerdi@ischool.berkeley.edu" \
+      Description="Mosquitto MQTT server based on Alpine Linux with Python. \
+                  Includes Eclipse Paho MQTT Python client library."
 
 RUN apk update && apk upgrade
 RUN apk add mosquitto mosquitto-clients
