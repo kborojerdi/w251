@@ -37,7 +37,7 @@ while(cap.isOpened()):
         cv2.imshow('face', face)
 	rc,png = cv2.imencode('.png', face)
 	msg = png.tobytes()
-        publish.single("test", payload=msg, qos=0, retain=False, hostname="169.62.93.58")
+        publish.single("test", payload=msg, qos=0, retain=False, hostname="mosquitto")
         # print(binascii.hexlify(msg))
         print(len(msg))
 
