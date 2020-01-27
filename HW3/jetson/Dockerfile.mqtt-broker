@@ -8,8 +8,4 @@ RUN apk add mosquitto mosquitto-clients
 # Expose MQTT port
 EXPOSE 1883
 
-# ENV PATH /usr/sbin:$PATH
-
-# CMD ["mosquitto"]
-# CMD /usr/sbin/mosquitto -c /conf/mosquitto.conf
 ENTRYPOINT ["/usr/sbin/mosquitto"]
