@@ -1,9 +1,9 @@
 version: "3"
 services:
 
-  mqtt-broker:
-    image: mqtt-broker
-    container_name: mqtt-broker
+  mosquitto:
+    image: mosquitto
+    container_name: mosquitto
     restart: always
     ports:
       - 1883:1883
@@ -19,7 +19,7 @@ services:
     networks:
       - mosquitto
     depends_on:
-      - mqtt-broker
+      - mosquitto
     tty: true
     volumes:
       - /mnt/mybucket:/mnt/mybucket
