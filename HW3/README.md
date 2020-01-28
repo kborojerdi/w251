@@ -146,7 +146,7 @@ Then run the docker-compose file
 docker-compose up
 ```
 
-To star the video and face detection I used the following command:
+To start the video and face detection I used the following command:
 ```
 # need to run xhost only once
 xhost + 
@@ -156,7 +156,3 @@ docker-compose exec face-detect python video_face_detect.py
 Now that all the services are running and the video is streaming to a window on the Jetson, if a face is detected it will capture and save the image. Here is a [link to sample face image](https://s3.us-south.cloud-object-storage.appdomain.cloud/cloud-object-storage-w251-hw3-faces/face_04e447f4-318f-4686-9446-97ac9bcdde6b.png) and many other images are saved in the base folder.
 
 I chose the naming for the topic as "system/jetson/webcam/face". The reason for this is, I created a base container for an entire IoT system, another layer for my jetson, a layer for the webcam input and finally the face topic. I did this so that i the future if I wanted to detect other items from the webcam I could do that in anthor topic. Or if I hooked up other sensors I would be able to create a seperate topic. And so on if there were other edge devices or sensors contected. I used QoS 0 as it seemed like there were many frames that were deteced repeatedly, and if a single image was lost for some reason I did not think it would make much difference in this application.
-
-
-
-
