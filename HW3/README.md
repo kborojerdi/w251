@@ -86,11 +86,11 @@ sudo s3fs bucketname /mnt/mybucket -o passwd_file=$HOME/.cos_creds -o sigv2 -o u
 ## Starting the MQTT Broker and Image Processor/Saver on the Cloud VSI
 I started with the Mosquitto Broker running on Alipne Linux. I created a Dockerfile.alpine-mqtt and built the docker image with the following command.
 ```
-docker build -t mosquitto -f Dockerfile.alpine-mqtt
+docker build -t mqtt-broker -f Dockerfile.mqtt-broker .
 ```
 In order to get the incoming images from the MQTT broker and and save them to the Object Storage. I used a python file to subscribe to the broker and convert the mesages back to an image from bytes and save it to the object storage. I created a Dockerfile based on Ubuntu and added the neccesary apps and build the docker image.
 ```
-docker build -t client -f Dockerfile.opencv-mqtt
+docker build -t image-saver -f Dockerfile.opencv-mqtt-image-save .
 ```
 
 To make it easy to run all containers I used a docker-compose.yml file to spin up both services at once with the follwoing command.
