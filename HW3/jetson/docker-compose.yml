@@ -13,7 +13,7 @@ services:
   mqtt-forwarder:
     image: mqtt-forwarder
     container_name: mqtt-forwarder
-    command: python mqtt.py
+    command: python mqtt-forwarder.py
     ports:
       - "1883"
     networks:
