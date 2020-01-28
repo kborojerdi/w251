@@ -19,7 +19,8 @@ Once the vm is up and running I find the ip address to ssh in using ``` ibmcloud
 Next I install docker and docker-compose to run my containers on this VM.
 
 I followed the instruction from week2 lab2 to install Docker and verify that it is working properly
-```apt-get install -y \
+```
+apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -37,11 +38,15 @@ apt-get update
 apt-get install -y docker-ce
 ```
 verify
-```docker run hello-world```
+```
+docker run hello-world
+```
 
 Next to install Docker Compose I ran the following
 
-```sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 
 ### Setup IBM Object Storage
 
@@ -66,20 +71,20 @@ sudo make install
 ```
 Next I went to my object storage and from the service credentials viewed my credentials:
 
-{
-  "apikey": "CXTYf2wsfzVXUW1bLnJhSxWn3ko-YczE0MYFqABkN_Fx",
-  "cos_hmac_keys": {
-    "access_key_id": "b8714174da0e4d6688d7c9534cd06d98",
-    "secret_access_key": "7d0354fa191c04c2df7ce86768f72ad35a36f37cc019bc52"
-  },
-
-
 ```
-echo "<b8714174da0e4d6688d7c9534cd06d98>:<7d0354fa191c04c2df7ce86768f72ad35a36f37cc019bc52>" > $HOME/.cos_creds
+   "cos_hmac_keys": {
+    "access_key_id": "somekey",
+    "secret_access_key": "somesecretkey"
+  },
+```
+
+And substitued this values for my <Access_Key_ID> and <Secret_Access_Key> in the command below.
+```
+echo "<Access_Key_ID>:<Secret_Access_Key>" > $HOME/.cos_creds
 chmod 600 $HOME/.cos_creds
 ```
-Finally I created a directory to mount my bucket using the following
 
+Finally I created a directory to mount my bucket using the following
 ```
 sudo mkdir -m 777 /mnt/mybucket
 sudo s3fs bucketname /mnt/mybucket -o passwd_file=$HOME/.cos_creds -o sigv2 -o use_path_request_style -o url=https://s3.us-east.objectstorage.softlayer.net
