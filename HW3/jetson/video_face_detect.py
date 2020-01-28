@@ -18,7 +18,7 @@ def on_connect(client, userdata, flags, rc):
         print("Connection to broker: Failed!")
         
 # Connect to broker
-client = paho.Client("LocalClient-02")
+client = mqtt.Client("LocalClient-02")
 client.on_connect = on_connect
 client.connect(LOCAL_MQTT_HOST, LOCAL_MQTT_PORT, 60)
 client.loop_start()
