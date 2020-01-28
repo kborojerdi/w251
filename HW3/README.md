@@ -129,7 +129,7 @@ xhost +
 docker-compose exec face-detect python video_face_detect.py
 ```
 
-
+https://s3.us-south.cloud-object-storage.appdomain.cloud/cloud-object-storage-w251-hw3-faces/face_04e447f4-318f-4686-9446-97ac9bcdde6b.png
 
 [link to sample face](https://s3.us-south.cloud-object-storage.appdomain.cloud/cloud-object-storage-w251-hw3-faces/myface.png)
 
