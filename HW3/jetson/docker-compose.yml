@@ -1,18 +1,18 @@
 version: "3.7"
 services:
 
-  mosquitto:
+  mqtt-broker:
     image: mqtt-broker
-    container_name: mosquitto
+    container_name: mqtt-broker
     restart: always
     ports:
       - "1883"
     networks:
       - mosquitto
 
-  forwarder:
+  mqtt-forwarder:
     image: mqtt-forwarder
-    container_name: forwarder
+    container_name: mqtt-forwarder
     command: python mqtt.py
     ports:
       - "1883"
