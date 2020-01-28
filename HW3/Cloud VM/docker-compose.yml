@@ -19,7 +19,7 @@ services:
     networks:
       - mosquitto
     depends_on:
-      - mosquitto
+      - mqtt-broker
     tty: true
     volumes:
       - /mnt/mybucket:/mnt/mybucket
