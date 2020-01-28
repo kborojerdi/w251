@@ -29,7 +29,7 @@ def on_message(client, userdata, msg):
    image = cv2.imdecode(face, flags=0)
    
    # Create a unique name for the image file
-   name = "/mnt/mybucket/faces/face_" + str(uuid.uuid4()) + ".png"
+   name = "/mnt/mybucket/face_" + str(uuid.uuid4()) + ".png"
 
    # Write image to Obeject Storage
    cv2.imwrite(name, image)
