@@ -8,7 +8,7 @@ RUN apk add mosquitto mosquitto-clients
 RUN pip install paho-mqtt
 
 WORKDIR /
-COPY mqtt.py .
+COPY mqtt-forwarder.py .
 
 # Expose MQTT port
 EXPOSE 1883
