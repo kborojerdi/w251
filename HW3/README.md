@@ -97,11 +97,38 @@ To make it easy to run all containers I used a docker-compose.yml file to spin u
 ```
 docker-compose up
 ```
+# Part 2: Jetson TX2
 
 ## Starting the MQTT Broker, Forwarder and Image Capture on the jetson TX2
-I re-used the Dockerfile from the previous broker. Also the Processor/Saver image can be used for the Image Capture. For the Forwader I found a alpine linux image that included python, and used that as my base image and added Mosquitto as we had done before with the broker. 
+The same dockerfile use to build the broker on the VM can be re-used on the Jetson. Also the Processor/Saver dockerfile can be used to build the container for face detection. I only had to swap out the python file that subscribes and saves the image, to the file that turns on video from the webcam and detects faces. For the Forwader I found a alpine linux image that included python, and used that as my base image, then added Mosquitto, paho-mqtt and a python file. The python file subscribes to both the local Jetson broker and the remote VM broker. The file then sucribes to a local topic and forwards all messages to the remote broker. 
 
-Again to make networking and other settings easier, I used a docker-compose.yml file.
+To build the MQTT Broker on the Jestson I used the following:
+```
+docker build -t mqtt-broker -f Dockerfile.mqtt-broker .
+```
+
+To build the MQTT Forwarder on the Jestson I used the following command:
+```
+docker build -t mqtt-forwarder -f Dockerfile.mqtt-forwarder .
+```
+
+To build the container that turns on the video capture and runs face detection:
+```
+docker build -t face-detect -f Dockerfile.opencv-mqtt-face-detect .
+```
+
+Again to make it easy to run all containers I used a docker-compose.yml file to spin up all three services at once with the follwoing command. I did not start the face detection script to make it easeier to start and stop.
+```
+docker-compose up
+```
+
+To star the video and face detection I used the following command:
+```
+# need to run xhost only once
+xhost + 
+docker-compose exec face-detect python video_face_detect.py
+```
+
 
 
 [link to sample face](https://s3.us-south.cloud-object-storage.appdomain.cloud/cloud-object-storage-w251-hw3-faces/myface.png)
