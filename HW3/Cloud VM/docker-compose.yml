@@ -2,7 +2,7 @@ version: "3"
 services:
 
   mosquitto:
-    image: mosquitto
+    image: mqtt-broker
     container_name: mosquitto
     restart: always
     ports:
