@@ -25,4 +25,4 @@ services:
       - /mnt/mybucket:/mnt/mybucket
 
 networks:
-  mosquitto
+  mosquitto:
