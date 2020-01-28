@@ -22,9 +22,9 @@ services:
       - mosquitto
     tty: true
 
-  video_capture:
-    image: video_capture
-    container_name: video_capture
+  face-detect:
+    image: face-detect
+    container_name: face-detect
     environment:
       - DISPLAY
     volumes:
