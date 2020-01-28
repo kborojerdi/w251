@@ -1,12 +1,27 @@
-"""This is for capturing video
-
-Calling method: python video_capture.py
-"""
+# Connect to local MQTT broker
+# Turn on video from webcam connected to jetson
+# Detect Faces convert to bytes and sent to broker
 
 import numpy as np
 import cv2
-import paho.mqtt.publish as publish
-import binascii
+import paho.mqtt.client as mqtt
+
+LOCAL_MQTT_HOST="mosquitto"
+LOCAL_MQTT_PORT=1883
+LOCAL_MQTT_TOPIC="system/jetson/webcam/face"
+
+# Function to check connection to broker in MQTT
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        print("Connection to broker: Success!")
+    else:
+        print("Connection to broker: Failed!")
+        
+# Connect to broker
+client = paho.Client("LocalClient-02")
+client.on_connect = on_connect
+client.connect(LOCAL_MQTT_HOST, LOCAL_MQTT_PORT, 60)
+client.loop_start()
 
 #load the XML classifier
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -32,20 +47,12 @@ while(cap.isOpened()):
         cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
         face = gray[y:y+h, x:x+w]
         roi_color = frame[y:y+h, x:x+w]
-	# your logic goes here; for instance
-	# cut out face from the frame.. 
+	# cut out face from the frame and display image.
         cv2.imshow('face', face)
 	rc,png = cv2.imencode('.png', face)
 	msg = png.tobytes()
-        publish.single("test", payload=msg, qos=0, retain=False, hostname="mosquitto")
-        # print(binascii.hexlify(msg))
-        print(len(msg))
-
-        # msg_back = np.frombuffer(msg, dtype=np.uint8)
-        # image = cv2.imdecode(msg_back, flags=0)
-
-        # cv2.imshow('image',image)
-        # cv2.imwrite("/data/w251/HW3/face.png", image)
+	# publish the face to MQTT broker
+        client.publish(LOCAL_MQTT_TOPIC, payload=msg, qos=0, retain=False)
 
     if ret == True:
 
@@ -60,6 +67,10 @@ while(cap.isOpened()):
     else:
         break
 
+# Disconnect from MQTT broker
+client.loop_stop()
+client.disconnect()	
+	
 # When everything done, release the capture
 cap.release()
 
