@@ -10,9 +10,9 @@ services:
     networks:
       - mosquitto
       
-  image_saver:
-    image: image_saver
-    container_name: image_saver
+  image-saver:
+    image: image-saver
+    container_name: image-saver
     command: python mqtt_sub_save.py
     ports:
       - "1883"
