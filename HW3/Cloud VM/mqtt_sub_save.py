@@ -1,14 +1,12 @@
-# Header
+
 
 import numpy as np
 import cv2
 import paho.mqtt.client as mqtt
-import binascii
 
-# print("test")
-# image = cv2.imread("/mnt/mybucket/test.png")
-# print(binascii.hexlify(image))
-# cv2.imwrite("/mnt/mybucket/face.png", image)
+LOCAL_MQTT_HOST="mosquitto"
+LOCAL_MQTT_PORT=1883
+LOCAL_MQTT_TOPIC="system/jetson/webcam/face"
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
@@ -16,33 +14,27 @@ def on_connect(client, userdata, flags, rc):
 
    # Subscribing in on_connect() means that if we lose the connection and
    # reconnect then subscriptions will be renewed.
-   client.subscribe("test")
+   client.subscribe(LOCAL_MQTT_TOPIC)
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
    msg = msg.payload
    
-   print("message recieved")
-   print("length")
-   print(len(msg))
-   #print(binascii.hexlify(msg))
+   print("message recieved!")
 
+   # Convert back from byte to array and then image
    face = np.frombuffer(msg, dtype=np.uint8)
    image = cv2.imdecode(face, flags=0)
-   # print(image.shape)
-   print("test")
 
+   # Write image to Obeject Storage
    cv2.imwrite("/mnt/mybucket/myface.png", image)
    print("image written")
 
-client = mqtt.Client()
+client = mqtt.Client("LocalClient-01")
 client.on_connect = on_connect
+client.connect(LOCAL_MQTT_HOST, LOCAL_MQTT_PORT, 60)
+
 client.on_message = on_message
 
-client.connect("mosquitto", 1883, 300)
-
-# Blocking call that processes network traffic, dispatches callbacks and
-# handles reconnecting.
-# Other loop*() functions are available that give a threaded interface and a
-# manual interface.
+# go into a loop to maintain connection
 client.loop_forever()
