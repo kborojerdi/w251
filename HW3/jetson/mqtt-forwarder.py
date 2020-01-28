@@ -1,3 +1,7 @@
+# MQTT message forwarder
+# Connect to local and remote brokers
+# subscribe to to topic and forward messages
+
 import paho.mqtt.client as mqtt
 
 LOCAL_MQTT_HOST="mosquitto"
