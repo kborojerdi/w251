@@ -20,6 +20,7 @@ services:
       - mosquitto
     depends_on: 
       - mosquitto
+    tty: true
 
   video_capture:
     image: video_capture
