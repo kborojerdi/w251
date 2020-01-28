@@ -4,6 +4,7 @@
 import numpy as np
 import cv2
 import paho.mqtt.client as mqtt
+import uuid
 
 LOCAL_MQTT_HOST="mosquitto"
 LOCAL_MQTT_PORT=1883
@@ -26,9 +27,12 @@ def on_message(client, userdata, msg):
    # Convert back from byte to array and then image
    face = np.frombuffer(msg, dtype=np.uint8)
    image = cv2.imdecode(face, flags=0)
+   
+   # Create a unique name for the image file
+   name = "/mnt/mybucket/face_" + str(uuid.uuid4()) + ".png"
 
    # Write image to Obeject Storage
-   cv2.imwrite("/mnt/mybucket/myface.png", image)
+   cv2.imwrite(name, image)
    print("image written")
 
 client = mqtt.Client("LocalClient-01")
