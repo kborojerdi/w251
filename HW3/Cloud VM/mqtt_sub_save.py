@@ -1,4 +1,5 @@
-
+# Connect to local MQTT Broker and subscrive to topic
+# Convert message from bytes to image and save
 
 import numpy as np
 import cv2
