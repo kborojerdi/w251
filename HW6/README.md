@@ -17,11 +17,11 @@ ibmcloud sl vs create --datacenter=dal13 --hostname=p100a --domain=kborojerdi.cl
 ```
 
 ### Start and run the Notebook
-Once we have a VM running, ssh into the machine and run the below.
+Once we have a VM running, ssh into the machine and run the below command.
 ```
 nvidia-docker run --rm --name hw06 -p 8888:8888 -d w251/hw06:x86-64
 ```
-Useing the docker logs and the IP address of the VM, we can go to the url of our Notebook.  
+Using the docker logs and the IP address of the VM, we can go to the url of our Notebook.  
 
 After filling the missing code cells with help from the *Toxic BERT plain vanila* Kernal, we run the notebooks on each of the VMs created above.
 
