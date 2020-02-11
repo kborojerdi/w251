@@ -46,4 +46,4 @@ From our results we are seeing an increase of 3.26x for training and 3.81x for p
 Copy the notebook https://www.kaggle.com/abhishek/pytorch-bert-inference, upload and use the "bert_pytorch.bin" created from the V100 notebook.
 Submit output file with the following result
 
-![Kaggle Score](https://github.com/kborojerdi/w251/blob/master/HW6/Kaggle Score - Kborojerdi.png)
+![Kaggle Score](https://github.com/kborojerdi/w251/blob/master/HW6/Kaggle%20Score%20-%20Kborojerdi.png)
