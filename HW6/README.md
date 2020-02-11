@@ -1,5 +1,4 @@
-# Homework 6 - Katayoun Borojerdi  
-The objective of this homework was to build an 
+# Homework 6 - Katayoun Borojerdi   
 
 ## BERT model - Jigsaw Unintended Bias in Toxicity Classification  
 For this homework we will train a BERT NLP model in pytorch on the Jigsaw Toxicity classification dataset.
