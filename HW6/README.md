@@ -27,13 +27,13 @@ Useing the docker logs and the IP address of the VM, we can go to the url of our
 After filling the missing code cells with help from the *Toxic BERT plain vanila* Kernal, we run the notebooks on each of the VMs created above.
 
 ### Comparing GPU performance of P100 vs V100
-Run times for P100 
+Run times for P100  
 Bert Tokenizer  34 mins  
 Training        365 mins  
 Prediction      61 mins  
 Total           460 mins  
 
-Run times for V100
+Run times for V100  
 Bert Tokenizer  34 mins  
 Training        112 mins  
 Prediction      16 mins  
@@ -43,7 +43,7 @@ Nvidia advertizes speed increase of "2.05x for V100 compared to the P100 in trai
 From our results we are seeing an increase of 3.26x for training and 3.81x for predictions.
 
 ### Section 8C - Submit to Kaggle
-Copy the notebook https://www.kaggle.com/abhishek/pytorch-bert-inference, upload and use the "bert_pytorch.bin" created from the V100 notebook.
-Submit output file with the following result
+I Copied the notebook at https://www.kaggle.com/abhishek/pytorch-bert-inference, uploaded and used the "bert_pytorch.bin" created from the V100 notebook.
+Submited the output file with the following result
 
 ![Kaggle Score](https://github.com/kborojerdi/w251/blob/master/HW6/Kaggle%20Score%20-%20Kborojerdi.png)
