@@ -71,3 +71,4 @@ nohup mpirun --allow-run-as-root -n 4 -H 150.238.57.24:2,150.238.57.28:2 -bind-t
 Started ~1:00 am
 
 
+time per step = 0:00:1.723
