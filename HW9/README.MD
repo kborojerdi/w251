@@ -66,6 +66,8 @@ MmI0b2NzYmNpNDAxNnRyMzc4amdwa2dudmE6NjM5OGE4OGYtN2FlNS00NjdhLWJjMDUtNDQ5NzI0ZjU2
 mpirun -n 2 -H 150.238.57.24, 150.238.57.28 --allow-run-as-root hostname
   
   
-nohup mpirun --allow-run-as-root -n 4 -H 150.238.57.24:2, 150.238.57.28:2 -bind-to none -map-by slot --mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH python run.py --config_file=/data/transformer-base.py --use_horovod=True --mode=train_eval &
+nohup mpirun --allow-run-as-root -n 4 -H 150.238.57.24:2,150.238.57.28:2 -bind-to none -map-by slot --mca btl_tcp_if_include eth0 -x NCCL_SOCKET_IFNAME=eth0 -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH python run.py --config_file=/data/transformer-base.py --use_horovod=True --mode=train_eval &
+
+Started ~1:00 am
 
 
