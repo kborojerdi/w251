@@ -56,3 +56,7 @@ cp -r docker /data
 rm -fr docker
 ln -s /data/docker ./docker
 service docker start
+
+
+Nvidia API key
+MmI0b2NzYmNpNDAxNnRyMzc4amdwa2dudmE6NjM5OGE4OGYtN2FlNS00NjdhLWJjMDUtNDQ5NzI0ZjU2YTM2
