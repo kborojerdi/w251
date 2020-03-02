@@ -21,3 +21,38 @@ v100b
 ibmcloud sl vs create --datacenter=dal10 --hostname=v100b --domain=kborojerdi.cloud --image=2263543 --billing=hourly  --network 1000 --key=1689110 --flavor AC2_16X120X100 --san
 ```
 
+log into the Softlayer Portal, find your instances under "devices" and "upgrade" them by adding a second 2 TB SAN drive to each VM, then format the 2TB disk and mount it to /data
+
+### Prepare the second disk
+
+### What is it called?
+
+fdisk -l
+You should see your large disk, something like this
+
+Disk /dev/xvdc: 2 TiB, 2147483648000 bytes, 4194304000 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+In this case, our disk is called /dev/xvdc. Your disk may be named differently. Format it:
+
+# first
+mkdir -m 777 /data
+mkfs.ext4 /dev/xvdc
+Add to /etc/fstab
+
+# edit /etc/fstab and all this line:
+/dev/xvdc /data                   ext4    defaults,noatime        0 0
+Mount the disk
+
+mount /data
+Move the working Docker directory
+
+By default, docker stores its images under /var/lib/docker , which will quickly fill up. So,
+
+service docker stop
+cd /var/lib
+cp -r docker /data
+rm -fr docker
+ln -s /data/docker ./docker
+service docker start
