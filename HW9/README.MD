@@ -1,5 +1,12 @@
-# K BOROJERDI
-# HW9
+# Homework 6 - Katayoun Borojerdi
+
+## Distributed Training and Neural Machine Translation
+
+Distributed Training and Neural Machine Translation.
+
+### Start VMs
+
+Start an ibmcloud VM with the follwoing commands
 
 Setup a pair of two V-100 VMs in Softlayer.
 
