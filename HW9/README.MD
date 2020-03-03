@@ -83,13 +83,13 @@ screenshots of your Tensorboard
 ![BLUE_SCORE](https://github.com/kborojerdi/w251/blob/master/HW9/BLUE_Score.png)
 
 * Eval Loss
-![Eval_Loss](https://github.com/kborojerdi/w251/blob/master/eval_loss.png)
+![Eval_Loss](https://github.com/kborojerdi/w251/blob/master/HW9/eval_loss.png)
 
 * Training Loss
 ![train_loss](https://github.com/kborojerdi/w251/blob/master/HW9/train_loss.png)
 
-1. How long does it take to complete the training run? (hint: this session is on distributed training, so it will take a while)
-It took about 24 hours to complete 50,000 steps.
+1. How long does it take to complete the training run? 
+   It took about 24 hours to complete 50,000 steps.
 
 2. Do you think your model is fully trained? How can you tell?
 
