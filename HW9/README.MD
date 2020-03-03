@@ -88,23 +88,22 @@ screenshots of your Tensorboard
 * Training Loss
 ![train_loss](https://github.com/kborojerdi/w251/blob/master/HW9/train_loss.png)
 
-1. How long does it take to complete the training run? 
+1. How long does it take to complete the training run?  
    It took about 24 hours to complete 50,000 steps.
 
-2. Do you think your model is fully trained? How can you tell?
+2. Do you think your model is fully trained? How can you tell?  
+   At 50,000 steps I do not think the model is fully trained. However at 300,000 steps, I think the model looks like it is proabably fully trained.
+3. Were you overfitting?  
+   At 50,000 steps I do think the model is overfitting, however at 300,000 steps looking at the sample eval loss it is possible the model is overfitting.
 
-3. Were you overfitting?
+4. Were your GPUs fully utilized?  
+   Yes, the GPUs on both machines seemed to be near 100%, at least while I monitored them.
 
-4. Were your GPUs fully utilized?
-Yes, the GPUs on both machines seemed to be near 100%, at least while I monitored them.
-
-Usage v100a
+* Usage v100a
 ![v100a](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%20Learning%20v100a.png)
 
-Usage v100b
+* Usage v100b
 ![v100b](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%20Learning%20v100b.png)
-
-
 
 5. Did you monitor network traffic (hint: apt install nmon ) ? Was network the bottleneck?
 It seems that the network must be somewhat the bottelneck since it is fastener to run this on a single machine with 2 GPUs
@@ -116,12 +115,12 @@ Network traffic from nmon
 The model is using the learning rate policy, transformer policy, which uses an equation to decay the learning rate as steps increase. For later steps, we use smaller learning rate which resuls in better model more quickly.
 
 7. How big was your training set (mb)? How many training lines did it contain?
-```
-du -sm wmt16_de_en/
-13351mb
-```
 
+* Training set size (mb)
+![Training_Size](https://github.com/kborojerdi/w251/blob/master/HW9/Training_Size.png)
 
+* Number of lines in the training set
+![Training_Lines](https://github.com/kborojerdi/w251/blob/master/HW9/Training_Lines.png)
 
 8. What are the files that a TF checkpoint is comprised of?
 The TF checkpoint contains three file types that store the data about the model and model weights, along with a couple other files.
@@ -135,7 +134,9 @@ The TF checkpoint contains three file types that store the data about the model 
 The data file is 813mb and the meta file is 15mb
 
 10. Remember the definition of a "step". How long did an average step take?
-Average time per step was 1.713 seconds
-Average objects per second 36437.740
 
-11. How does that correlate with the observed network utilization between nodes?
+* Model Finished
+![Finished_Training](https://github.com/kborojerdi/w251/blob/master/HW9/Finished_Training.png)
+
+11. How does that correlate with the observed network utilization between nodes?  
+    Faster Network will result in shorter average step time
