@@ -88,16 +88,18 @@ It took about 24 hours to complete 50,000 steps.
 Yes, the GPUs on both machines seemed to be near 100%, at least while I monitored them.
 
 Usage v100a
-![v100a](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%v100a.png)
+![v100a](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%20Learning%20v100a.png)
 
 Usage v100b
-![v100b](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%v100b.png)
+![v100b](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%20Learning%20v100b.png)
+
+
 
 5. Did you monitor network traffic (hint: apt install nmon ) ? Was network the bottleneck?
 It seems that the network must be somewhat the bottelneck since it is fastener to run this on a single machine with 2 GPUs
 
 Network traffic from nmon
-![Network](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%Network.png)
+![Network](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%20Learning%20Network.png)
 
 6. Take a look at the plot of the learning rate and then check the config file. Can you explan this setting?
 The model is using the learning rate policy, transformer policy, which uses an equation to decay the learning rate as steps increase. For later steps, we use smaller learning rate which resuls in better model more quickly.
