@@ -72,3 +72,57 @@ Started ~1:00 am
 
 
 time per step = 0:00:1.723
+
+
+### Submission
+Please submit the nohup.out file along with screenshots of your Tensorboard indicating training progress (Blue score, eval loss) over time. Also, answer the following (simple) questions:
+
+1. How long does it take to complete the training run? (hint: this session is on distributed training, so it will take a while)
+It took about 24 hours to complete 50,000 steps.
+
+2. Do you think your model is fully trained? How can you tell?
+
+3. Were you overfitting?
+
+4. Were your GPUs fully utilized?
+Yes, the GPUs on both machines seemed to be near 100%, at least while I monitored them.
+
+Usage v100a
+![v100a](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%v100a.png)
+
+Usage v100b
+![v100b](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%v100b.png)
+
+5. Did you monitor network traffic (hint: apt install nmon ) ? Was network the bottleneck?
+It seems that the network must be somewhat the bottelneck since it is fastener to run this on a single machine with 2 GPUs
+
+Network traffic from nmon
+![Network](https://github.com/kborojerdi/w251/blob/master/HW9/Distributed%Learning%Network.png)
+
+6. Take a look at the plot of the learning rate and then check the config file. Can you explan this setting?
+The model is using the learning rate policy, transformer policy, which uses an equation to decay the learning rate as steps increase. For later steps, we use smaller learning rate which resuls in better model more quickly.
+
+7. How big was your training set (mb)? How many training lines did it contain?
+```
+du -sm wmt16_de_en/
+13351mb
+```
+
+
+
+8. What are the files that a TF checkpoint is comprised of?
+The TF checkpoint contains three file types that store the data about the model and model weights, along with a couple other files.
+* The checkpoint file is a bookkeeping file that can be used for loading different time saved chkp files.
+* The .meta file holds the graph of the model and all the metadata associated like learning rate, etc.
+* The .index file holds the key-value table linking the tensor names and the data in the chkp.data files.
+* The .data files hold the weights. There can be many data files because they can be created at multiple timesteps while training.
+* The events file stores information needed to visualise the model along with all the data measured while training. This does not affec saving or restoring the model itself.
+
+9. How big is your resulting model checkpoint (mb)?
+The data file is 813mb and the meta file is 15mb
+
+10. Remember the definition of a "step". How long did an average step take?
+Average time per step was 1.713 seconds
+Average objects per second 36437.740
+
+11. How does that correlate with the observed network utilization between nodes?
