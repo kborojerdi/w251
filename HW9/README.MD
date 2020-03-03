@@ -75,7 +75,18 @@ time per step = 0:00:1.723
 
 
 ### Submission
-Please submit the nohup.out file along with screenshots of your Tensorboard indicating training progress (Blue score, eval loss) over time. Also, answer the following (simple) questions:
+The nohup.out file from the training is in the github repo.
+
+screenshots of your Tensorboard 
+
+* BLUE Score
+![BLUE_SCORE](https://github.com/kborojerdi/w251/blob/master/HW9/BLUE_Score.png)
+
+* Eval Loss
+![Eval_Loss](https://github.com/kborojerdi/w251/blob/master/eval_loss.png)
+
+* Training Loss
+![train_loss](https://github.com/kborojerdi/w251/blob/master/HW9/train_loss.png)
 
 1. How long does it take to complete the training run? (hint: this session is on distributed training, so it will take a while)
 It took about 24 hours to complete 50,000 steps.
