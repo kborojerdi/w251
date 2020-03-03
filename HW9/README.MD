@@ -98,4 +98,4 @@ The TF checkpoint contains three file types that store the data about the model 
 ![Finished_Training](https://github.com/kborojerdi/w251/blob/master/HW9/Finished_Training.png)
 
 #### 11. How does that correlate with the observed network utilization between nodes?  
-    Faster Network will result in shorter average step time
+   Faster Network will result in shorter average step time
