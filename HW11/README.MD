@@ -1,44 +1,44 @@
 End of baseline run
 
-50s 1ms/step - loss: 141.6825 - accuracy: 0.0000e+00
-At step  50000
-reward:  -4.639715675792445
-total rewards  -35.415633396472685
-At step  0
-reward:  12.870280751958433
-total rewards  0
-At step  100
-reward:  4.153082502231876
-total rewards  -29.044648704130193
-At step  200
-reward:  4.453507360340578
-total rewards  35.12217693934092
-At step  300
-reward:  -3.9284606875816888
-total rewards  -3.872694846583436
-At step  400
-reward:  5.577093951093673
-total rewards  134.2392453739634
-At step  500
-reward:  0.43816098821369753
-total rewards  167.12670296311256
-Landed it!
+50s 1ms/step - loss: 141.6825 - accuracy: 0.0000e+00  
+At step  50000  
+reward:  -4.639715675792445  
+total rewards  -35.415633396472685  
+At step  0  
+reward:  12.870280751958433  
+total rewards  0  
+At step  100  
+reward:  4.153082502231876  
+total rewards  -29.044648704130193  
+At step  200  
+reward:  4.453507360340578  
+total rewards  35.12217693934092  
+At step  300  
+reward:  -3.9284606875816888  
+total rewards  -3.872694846583436  
+At step  400  
+reward:  5.577093951093673  
+total rewards  134.2392453739634  
+At step  500  
+reward:  0.43816098821369753  
+total rewards  167.12670296311256  
+Landed it!  
 [ 6.16381645e-02 -1.09761556e-04 -1.60246958e-01 -3.57225832e-06
- -5.15240291e-03  1.67496304e-06  1.00000000e+00  1.00000000e+00]
-Successful Landing!!!  576
-Total successes are:  47
-At step  600
-reward:  6.820765016402145
-total rewards  192.5806957020151
-At step  700
-reward:  -31.602291410254363
-total rewards  381.30632184655786
-At step  800
-reward:  -44.18105234702426
-total rewards  293.844629748485
-At step  900
-reward:  -30.6659667393515
-total rewards  258.8939502829593
-At step  1000
-reward:  -1.0634434245681479
-total rewards  274.6644446291531
+ -5.15240291e-03  1.67496304e-06  1.00000000e+00  1.00000000e+00]  
+Successful Landing!!!  576  
+Total successes are:  47  
+At step  600  
+reward:  6.820765016402145  
+total rewards  192.5806957020151  
+At step  700  
+reward:  -31.602291410254363  
+total rewards  381.30632184655786  
+At step  800  
+reward:  -44.18105234702426  
+total rewards  293.844629748485  
+At step  900  
+reward:  -30.6659667393515  
+total rewards  258.8939502829593  
+At step  1000  
+reward:  -1.0634434245681479  
+total rewards  274.6644446291531  
