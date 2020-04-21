@@ -1,4 +1,4 @@
-<h1>
+<h1 align="center">
   <br>
   Homework 11 - OpenAI 
   <img src="https://gym.openai.com/assets/dist/home/header/home-icon-54c30e2345.svg" alt="Gym" width="50">
@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4>Training a Lunar Lander to properly land using a Jetson TX2.</h4>
+<h4 align="center">Training a Lunar Lander to properly land using a Jetson TX2.</h4>
 
 ## Key Features
 
