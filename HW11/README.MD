@@ -11,13 +11,6 @@
 <h4 align="center">
   Training a Lunar Lander to properly land using a Jetson TX2.
 </h4>
-
-## Key Features
-
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, Li
   
 ## Reinforcement Learning | Brief Intro
 Reinforcement learning is an interesting area of Machine learning. The rough Idea is that you have an agent and an environment. The agent takes actions and environment gives reward based on those actions, The goal is to teach the agent optimal behaviour in order to maximize the reward received by the environment.
