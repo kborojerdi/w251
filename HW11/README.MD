@@ -119,7 +119,7 @@ Crashed!!!  9 337 -517.217525180494
 Total successes are:  1  
 
 <div align="center">
-<![](Lunar_lander_run3.gif) >
+![](Lunar_lander_run3.gif)
 <p>Perfectly balanced</p>
 </div>
 
