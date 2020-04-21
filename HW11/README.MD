@@ -1,14 +1,16 @@
-<h2> Katayoun Borojerdi <h2>
+<h3>
+  Katayoun Borojerdi
+<h3>
 
 <h1 align="center">
-  <br>
-  Homework 11 - OpenAI 
+  Homework 11 - OpenAI
   <img src="https://gym.openai.com/assets/dist/home/header/home-icon-54c30e2345.svg" alt="Gym" width="50">
   Gym
-  <br>
 </h1>
 
-<h4 align="center">Training a Lunar Lander to properly land using a Jetson TX2.</h4>
+<h4 align="center">
+  Training a Lunar Lander to properly land using a Jetson TX2.
+</h4>
 
 ## Key Features
 
@@ -22,7 +24,7 @@
 <p>Successfull episode after 3rd training conifgurartion.</p>
 </div>
 
-![](Lunar_lander_run3.gif)
+
 
 custom run 2
 
