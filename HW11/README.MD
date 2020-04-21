@@ -123,7 +123,7 @@ Total successes are:  1
 <p>Perfectly balanced</p>
 </div>
 
-![](Lunar_lander_run3.gif)
+![](Lunar_lander_run3.gif){ width="800" height="600" style="display: block; margin: 0 auto" }
 
 custom run 2
 
