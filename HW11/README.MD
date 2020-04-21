@@ -119,12 +119,11 @@ Crashed!!!  9 337 -517.217525180494
 Total successes are:  1  
 
 <div align="center">
- img src
-<img src=Lunar_lander_run3.gif)>
+<img src="Lunar_lander_run3.gif">
 <p>Perfectly balanced</p>
 </div>
 
-![](Lunar_lander_run3.gif){ width="800" height="600" style="display: block; margin: 0 auto" }
+![](Lunar_lander_run3.gif)
 
 custom run 2
 
