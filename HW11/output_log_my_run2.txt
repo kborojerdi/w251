@@ -1,0 +1,71 @@
+training the model
+Epoch 1/10
+50000/50000 [==============================] - 57s 1ms/step - loss: 89.8391
+Epoch 2/10
+50000/50000 [==============================] - 57s 1ms/step - loss: 89.4937
+Epoch 3/10
+50000/50000 [==============================] - 57s 1ms/step - loss: 89.0342
+Epoch 4/10
+50000/50000 [==============================] - 56s 1ms/step - loss: 89.1679
+Epoch 5/10
+50000/50000 [==============================] - 58s 1ms/step - loss: 88.7345
+Epoch 6/10
+50000/50000 [==============================] - 58s 1ms/step - loss: 88.2975
+Epoch 7/10
+50000/50000 [==============================] - 56s 1ms/step - loss: 88.5251
+Epoch 8/10
+50000/50000 [==============================] - 56s 1ms/step - loss: 88.3671
+Epoch 9/10
+50000/50000 [==============================] - 56s 1ms/step - loss: 88.2707
+Epoch 10/10
+50000/50000 [==============================] - 55s 1ms/step - loss: 87.9755
+Crashed!!!  290 233 -275.13369115458477
+Total successes are:  29
+Crashed!!!  291 500 -56.150946852781985
+Total successes are:  29
+Crashed!!!  292 500 -14.68009141822718
+Total successes are:  29
+Crashed!!!  293 356 -338.4770743956643
+Total successes are:  29
+Crashed!!!  294 500 -166.21333481484268
+Total successes are:  29
+Crashed!!!  295 309 9.728373528466221
+Total successes are:  29
+Crashed!!!  296 500 -12.017110238849549
+Total successes are:  29
+Crashed!!!  297 500 66.65699841021114
+Total successes are:  29
+Crashed!!!  298 500 258.1612090272496
+Total successes are:  29
+Crashed!!!  299 193 -264.5587317789692
+Total successes are:  29
+is this running
+Crashed!!!  0 500 -15.775387767114408
+Total successes are:  0
+is this running
+Crashed!!!  1 500 8.217817396103412
+Total successes are:  0
+is this running
+Crashed!!!  2 500 -94.17911436450228
+Total successes are:  0
+is this running
+Crashed!!!  3 500 251.67444971957215
+Total successes are:  0
+is this running
+Crashed!!!  4 500 59.83615439616775
+Total successes are:  0
+is this running
+Crashed!!!  5 500 -41.266879599628275
+Total successes are:  0
+is this running
+Crashed!!!  6 500 -21.095310075198284
+Total successes are:  0
+is this running
+Crashed!!!  7 500 114.20600085330193
+Total successes are:  0
+is this running
+Crashed!!!  8 500 241.2974465716172
+Total successes are:  0
+is this running
+Crashed!!!  9 500 -110.32102479171591
+Total successes are:  0
