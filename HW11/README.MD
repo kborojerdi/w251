@@ -6,8 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of </h4>
-
+<h4>Training a Lunar Lander to properly land using a Jetson TX2.</h4>
 
 ## Key Features
 
@@ -18,7 +17,7 @@
 
 <div align="center">
 <img src="Lunar_lander_run3.gif">
-<p>Perfectly balanced</p>
+<p>Successfull episode after 3rd training conifgurartion.</p>
 </div>
 
 ![](Lunar_lander_run3.gif)
