@@ -33,6 +33,9 @@ There are 2 different Lunar Lander Environment in OpenAIGym. One has discrete ac
 ## LunarLanderContinuous-v2 (Continuous)
 Landing pad is always at coordinates (0,0). Action is two real values vector from -1 to +1. First controls main engine, -1..0 off, 0..+1 throttle from 50% to 100% power. Engine can’t work with less than 50% power. Second value -1.0..-0.5 fire left engine, +0.5..+1.0 fire right engine, -0.5..0.5 off.
 
+# Initial Baseline run
+The initial run took about 8 hours to comoplete. It seemed to train okay. It was able to succesfully land once during the test run after training was complete. However It was difficult to quantify because the model was run by steps instead of episodes.
+
 ## First Model Update
 The original RL algorithm generated actions between -1 and 1. However because all actions between -.5 and .5 mean the engins are off. I felt this would bias the actions and waste processing time. So I changed to generate numbers from .4 to 1 for the main enginer and +/- that same range for the side engines.
 
