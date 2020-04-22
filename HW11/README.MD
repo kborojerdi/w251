@@ -66,6 +66,18 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
 </div>
 
 ## Second Model Update
+For my second model update I tried to increase the size of the network and change to nadam optimizer. I reduced the number of iterations used for randomly calculating the actions per step from 100 to 50.
+
+```
+def nnmodel(input_dim):
+    model = Sequential()
+    model.add(Dense(32, input_dim=input_dim, activation='relu')) #default 32
+    model.add(Dense(16, activation='relu')) #default 16
+    model.add(Dense(1))
+    model.compile(loss='mean_squared_error', optimizer='adam') #default adam, metrics=['accuracy']
+    return model
+```
+
 
 Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
 
