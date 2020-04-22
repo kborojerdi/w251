@@ -77,7 +77,7 @@ if __name__=="__main__":
         if modelTrained:
             maxr = -1000
             maxa = None
-            for i in range(100):
+            for i in range(50):
 #                a1 = np.random.randint(-1000,1000)/1000
 #                a2 = np.random.randint(-1000,1000)/1000
                 a1 = np.random.randint(400,1000)/1000
