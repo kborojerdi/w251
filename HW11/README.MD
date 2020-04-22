@@ -54,7 +54,7 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
 </div>
 
 <div align="center">
-<img src="Lunar_lander_run3.gif">
+<img src="/video/Lunar_lander_run3.gif">
 <p>Successfull episode after 3rd training conifgurartion.</p>
 </div>
 
