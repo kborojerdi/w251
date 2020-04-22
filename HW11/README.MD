@@ -55,7 +55,7 @@ Following is the plot showing rewards per episode. The model seems to improve qu
  </div>
 
 
-## Test Episode Videos
+## Test Episode Videos First Model Update
 Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
   
 <div align="center">
@@ -87,7 +87,7 @@ Following is the plot showing rewards per episode. The model is an improvemenet 
 <img src="../HW11/Run2files/Model_Update_2.svg">
 </div>
 
-## Test Episode Videos
+## Test Episode Videos Second Model Update
 Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
   
 <div align="center">
@@ -100,7 +100,7 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
 <p>Episode from Second Model Update</p>
 </div>
 
-## Additional Improvments and Model Updates
+## Additional Improvments and Potential Model Updates
 Ther are several things that we could do to improve this RL Algorythm. If we could trim the training set to include episodes with better total reward it would likely result in better more consistant model. Also if we could rpedict on the actions instead of the reward we could train the model more quickly.
 
 Also Looking into other methods that have been used on this problem, I looked into useing a DDQN algorythm to solve this problem. It seems like this approach could solve the problem more quickly than the method we used.
