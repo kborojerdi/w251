@@ -60,12 +60,12 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
   
 <div align="center">
 <img src="../HW11/videos/Lunar_lander_run1.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
+<p>Episode from First Model Update</p>
 </div>
 
 <div align="center">
 <img src="../HW11/videos/Lunar_lander_run2.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
+<p>Episode from First Model Update</p>
 </div>
 
 ## Second Model Update
@@ -92,12 +92,12 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
   
 <div align="center">
 <img src="../HW11/videos/Lunar_lander_run3.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
+<p>Episode from Second Model Update</p>
 </div>
 
 <div align="center">
 <img src="../HW11/videos/Lunar_lander_run4.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
+<p>Episode from Second Model Update</p>
 </div>
 
 ## Additional Improvments and Model Updates
