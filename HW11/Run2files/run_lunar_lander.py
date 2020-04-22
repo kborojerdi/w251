@@ -23,9 +23,8 @@ from collections import deque
 # X_train, y_train = [],[]
 frames = []
 
-#memory = deque(maxlen=20000)
-X_train = deque(maxlen=50000)
-y_train = deque(maxlen=50000)
+X_train = deque(maxlen=10000)
+y_train = deque(maxlen=10000)
 
 
 if __name__=="__main__":
@@ -183,7 +182,7 @@ if __name__=="__main__":
         if modelTrained:
             maxr = -1000
             maxa = None
-            for i in range(100):
+            for i in range(50):
 #                a1 = np.random.randint(-1000,1000)/1000
 #                a2 = np.random.randint(-1000,1000)/1000
                 a1 = np.random.randint(400,1000)/1000
