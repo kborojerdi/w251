@@ -54,9 +54,10 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
 </div>
 
 <div align="center">
-<img src="../videos/Lunar_lander_run3.gif">
+<img src="../HW11/videos/Lunar_lander_run1.gif">
 <p>Successfull episode after 3rd training conifgurartion.</p>
 </div>
+
 
 Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
 
