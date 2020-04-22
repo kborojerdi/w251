@@ -45,19 +45,6 @@ self.memory = deque(maxlen=2000)
 
 This also acts as a way to remove old training steps that are not as good for newer ones based on more accurate NN model. With this I was able to train the model for more total steps. I kept the NN the same for comparison to the basleine RL algorythm and ran it for about 3 times the total number of steps.
 
-## Training Visualization
-Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
-
-<div align="center">
-<img src="Lunar_lander_run3.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
-</div>
-
-<div align="center">
-<img src="../HW11/videos/Lunar_lander_run1.gif">
-<p>Successfull episode after 3rd training conifgurartion.</p>
-</div>
-
 
 Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
 
@@ -65,3 +52,37 @@ Plot of the training vs
 
 Reward vs Episode Plot (continuous)
 
+## Test Episode Videos
+Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
+  
+<div align="center">
+<img src="../HW11/videos/Lunar_lander_run1.gif">
+<p>Successfull episode after 3rd training conifgurartion.</p>
+</div>
+
+<div align="center">
+<img src="../HW11/videos/Lunar_lander_run2.gif">
+<p>Successfull episode after 3rd training conifgurartion.</p>
+</div>
+
+## Second Model Update
+
+Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
+
+Plot of the training vs 
+
+Reward vs Episode Plot (continuous)
+
+
+## Test Episode Videos
+Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
+  
+<div align="center">
+<img src="../HW11/videos/Lunar_lander_run3.gif">
+<p>Successfull episode after 3rd training conifgurartion.</p>
+</div>
+
+<div align="center">
+<img src="../HW11/videos/Lunar_lander_run4.gif">
+<p>Successfull episode after 3rd training conifgurartion.</p>
+</div>
