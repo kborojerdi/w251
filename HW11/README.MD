@@ -48,12 +48,12 @@ self.memory = deque(maxlen=2000)
 
 This also acts as a way to remove old training steps that are not as good for newer ones based on more accurate NN model. With this I was able to train the model for more total steps. I kept the NN the same for comparison to the basleine RL algorythm and ran it for about 3 times the total number of steps.
 
+Following is the plot showing rewards per episode. The model seems to improve quickly, but then platues and actually seems to get worse at the end. Even if we run this model longer this does not seem to be an effective algorythm to consistantly solve the problem.
 
-Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
+<div align="center">
+<img src="../HW11/Run1Files/Model_Update_1.svg">
+ </div>
 
-Plot of the training vs 
-
-Reward vs Episode Plot (continuous)
 
 ## Test Episode Videos
 Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
@@ -81,12 +81,11 @@ def nnmodel(input_dim):
     return model
 ```
 
-Following is the plot showing rewards per episode. I was able to solve the task in around 350 episodes.
+Following is the plot showing rewards per episode. The model is an improvemenet over the first model. The average of the rewards is cloaser to 0 where before it was negative. Towards the end it seems to be performing more consistantly. I think if I ran this model longer and maybe tweeked some other parameters it would consistantly solve this problem.
 
-Plot of the training vs 
-
-Reward vs Episode Plot (continuous)
-
+<div align="center">
+<img src="../HW11/Run2files/Model_Update_2.svg">
+</div>
 
 ## Test Episode Videos
 Here are my 2 best episodes out of 10 test episodes I ran once the training was complete.
@@ -100,3 +99,8 @@ Here are my 2 best episodes out of 10 test episodes I ran once the training was 
 <img src="../HW11/videos/Lunar_lander_run4.gif">
 <p>Successfull episode after 3rd training conifgurartion.</p>
 </div>
+
+## Additional Improvments and Model Updates
+Ther are several things that we could do to improve this RL Algorythm. If we could trim the training set to include episodes with better total reward it would likely result in better more consistant model. Also if we could rpedict on the actions instead of the reward we could train the model more quickly.
+
+Also Looking into other methods that have been used on this problem, I looked into useing a DDQN algorythm to solve this problem. It seems like this approach could solve the problem more quickly than the method we used.
