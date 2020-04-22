@@ -20,7 +20,7 @@ containes the OpenAI Gym Lunar Lander enviornment and the configuration of the k
 ```run_lunar_lander.py```
 calls both the the Lunar Lander environment and NN model, and contians the Reinforcement learning algorythm.
 
-## DefaultcReinforcement Learning 
+## Reinforcement Learning 
 The default RL algorithm  seems to be a monte carlo method. Actions are randomly generated, and we use them to get coresponding states and rewards from the enviornment. We use that information to train our nuearl network. Once the netwrok is trained again we generate random actions, but now we feed those into our NN and estimate the reward. We choose that action withth highest reward and progress through the episode. periodiclly we re-trin the model, and over time the model improves and eventually becomes proficient at predicting r based on a given current state and action.
 
 The problem with this model is that even after it is trained sufficently, it still relies on you feeding in random actions to find the maximum reward. it would be more efficient if our network could output the action. Also we are not including discount reward factor in this model. So there is no weight given to future reward. This may cause the model to spedn more time hoevering and learn to land and complete the espisode.
@@ -33,7 +33,7 @@ There are 2 different Lunar Lander Environment in OpenAIGym. One has discrete ac
 ## LunarLanderContinuous-v2 (Continuous)
 Landing pad is always at coordinates (0,0). Action is two real values vector from -1 to +1. First controls main engine, -1..0 off, 0..+1 throttle from 50% to 100% power. Engine can’t work with less than 50% power. Second value -1.0..-0.5 fire left engine, +0.5..+1.0 fire right engine, -0.5..0.5 off.
 
-# Initial Baseline run
+## Initial Baseline run
 The initial run took about 8 hours to comoplete. It seemed to train okay. It was able to succesfully land once during the test run after training was complete. However It was difficult to quantify because the model was run by steps instead of episodes.
 
 ## First Model Update
